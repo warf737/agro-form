@@ -1,20 +1,35 @@
-<template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
-</template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import DisplayForm from './components/DisplayForm';
+import EditForm from './components/EditForm';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    DisplayForm,
+    EditForm,
+  },
+    data() {
+      return {
+          isEditForm: false,
+      }
+    },
+    methods: {
+      handleChangeDisplayingMode() {
+        this.isEditForm = !this.isEditForm;
+      }
+    },
 }
 </script>
+
+<template>
+  <div id="app">
+    <display-form
+      v-if="!isEditForm"
+      @change-displaying="handleChangeDisplayingMode"
+    />
+    <edit-form v-else/>
+  </div>
+</template>
 
 <style lang="scss">
 #app {
