@@ -46,9 +46,11 @@ export default {
       }
     },
     handleSelectCell(cell) {
-      console.log('cell', cell);
       this.editData = cell;
     },
+    handleClearForm() {
+      this.editData = null;
+    }
   },
 }
 </script>
@@ -66,6 +68,7 @@ export default {
           :table-data="tableData"
           @toggle-edit="handleChangeDisplayingMode"
           @select-cell="handleSelectCell"
+          @clear-form="handleClearForm"
       />
       <edit-form
           v-else

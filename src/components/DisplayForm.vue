@@ -1,5 +1,6 @@
 <script>
 import { getYear, addYears, subYears } from 'date-fns';
+import ClickOutside from 'vue-click-outside';
 
 export default {
   name: 'DisplayForm',
@@ -20,6 +21,9 @@ export default {
       },
       currentPage: 1
     };
+  },
+  directives: {
+    ClickOutside
   },
   computed: {
     fields() {
@@ -140,6 +144,10 @@ export default {
     handleEdit() {
       this.$emit('toggle-edit');
     },
+    clearForm() {
+      console.log('clear 1');
+      this.$emit('clear-form');
+    },
     handleSizeChange(val) {
       console.log(`${val} items per page`);
     },
@@ -214,7 +222,14 @@ export default {
     </section>
 
     <section class="df-table">
-      <b-table fixed :fields="fields" :items="items" class="mt-3" sort-by="name">
+      <b-table
+          fixed
+          :fields="fields"
+          :items="items"
+          class="mt-3"
+          sort-by="name"
+          v-click-outside="clearForm"
+      >
 
         <template #cell(first-year)="data">
           <el-button @click="handleSelect({ label:'first-year',  field: data.item.name, data: data.item['first-year'] })">
