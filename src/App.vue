@@ -66,7 +66,6 @@ export default {
 
 <style lang="scss">
 #app {
-  //font-family: Avenir, Helvetica, Arial, sans-serif;
   font-family: DINPro, sans-serif;
   color: #008c83;
   font-weight: normal;
@@ -90,5 +89,9 @@ export default {
   margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
+}
+
+td {
+  vertical-align: middle !important;
 }
 </style>

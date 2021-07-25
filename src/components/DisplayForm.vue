@@ -17,7 +17,8 @@ export default {
         plant: -1,
         year: getYear(new Date()).toString(),
         farmingField: -1,
-      }
+      },
+      currentPage: 1
     };
   },
   computed: {
@@ -135,6 +136,12 @@ export default {
     handleSelect(cell) {
       const year = this.items.find(field => field.key === cell.label).label
       this.$emit('select-cell', {...cell, year: year });
+    },
+    handleSizeChange(val) {
+      console.log(`${val} items per page`);
+    },
+    handleCurrentChange(val) {
+      console.log(`current page: ${val}`);
     }
   },
 };
@@ -272,8 +279,22 @@ export default {
         </template>
 
       </b-table>
-
     </section>
+
+
+    <div class="df-pagination">
+      <el-pagination
+          @size-change="handleSizeChange"
+          @current-change="handleCurrentChange"
+          :current-page.sync="currentPage"
+          :page-sizes="[10, 15, 20, 25]"
+          :page-size="10"
+          layout="total, sizes, prev, pager, next, jumper"
+          :total="tableData.length">
+      </el-pagination>
+    </div>
+
+
   </div>
 </template>
 
@@ -300,8 +321,11 @@ export default {
     margin-right: 6px;
 
   }
-}
 
+  &-pagination {
+    display: flex;
+  }
+}
 
 .control {
   &-title {
@@ -339,7 +363,6 @@ export default {
 }
 
 .table-cell {
-
   &--data-wrapper {
     display: flex;
     justify-content: space-between;
@@ -369,6 +392,7 @@ export default {
 .data-plan {
   color: #d8a331;
 }
+
 .sr-only {
   display: none;
  }
@@ -377,9 +401,6 @@ export default {
   color: inherit !important;
 }
 
-.tbody {
-  vertical-align: middle;
-}
 .table > thead > tr > th:not(:first-child) div {
   font-family: DINPro-Medium, sans-serif !important;
   padding: 5px;
@@ -390,5 +411,9 @@ export default {
   color: grey;
   font-size: 17px;
   font-weight: normal;
+}
+
+.el-pagination {
+  margin-left: auto;
 }
 </style>
