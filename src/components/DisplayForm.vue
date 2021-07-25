@@ -377,6 +377,9 @@ export default {
   color: inherit !important;
 }
 
+.tbody {
+  vertical-align: middle;
+}
 .table > thead > tr > th:not(:first-child) div {
   font-family: DINPro-Medium, sans-serif !important;
   padding: 5px;
