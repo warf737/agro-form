@@ -117,10 +117,6 @@ export default {
          filteredResult = tempResult;
        }
       }
-
-
-
-
       return filteredResult;
     },
   },
@@ -289,6 +285,7 @@ export default {
     font-size: 20px;
     font-family: DINPro-Medium, sans-serif;
     width: 25%;
+    text-align: left;
   }
 
   &-controls--wrapper {
@@ -375,4 +372,20 @@ export default {
 .sr-only {
   display: none;
  }
+
+.table {
+  color: inherit !important;
+}
+
+.table > thead > tr > th:not(:first-child) div {
+  font-family: DINPro-Medium, sans-serif !important;
+  padding: 5px;
+  box-sizing: border-box;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: grey;
+  font-size: 17px;
+  font-weight: normal;
+}
 </style>
