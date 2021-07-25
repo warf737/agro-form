@@ -104,7 +104,7 @@ export default {
       let tempResult = [];
       if (this.selected.plant !== -1) {
         const ff = this.plants.find(f => f.Id === this.selected.plant);
-       tempResult = filteredResult.filter(fr => {
+        tempResult = filteredResult.filter(fr => {
           for (let i in fr) {
             if (typeof fr[i] !== 'string') {
             const test = fr[i]?.find(plant => plant.name === ff.Name)
@@ -114,9 +114,9 @@ export default {
             }
           }
         })
-       if (tempResult.length > 0) {
-         filteredResult = tempResult;
-       }
+
+        filteredResult = tempResult.length > 0 ? tempResult : [];
+
       }
       return filteredResult;
     },
@@ -134,8 +134,11 @@ export default {
       return { fact : factTotal, plan: planTotal };
     },
     handleSelect(cell) {
-      const year = this.items.find(field => field.key === cell.label).label
+      const year = this.items.find(field => field.key === cell.label)
       this.$emit('select-cell', {...cell, year: year });
+    },
+    handleEdit() {
+      this.$emit('toggle-edit');
     },
     handleSizeChange(val) {
       console.log(`${val} items per page`);
@@ -149,7 +152,6 @@ export default {
 
 <template>
   <div>
-    <h2 class="df-title">СЕВООБОРОТ</h2>
     <section class="df-controls--wrapper">
 
       <article class="df-controls--control">
@@ -200,16 +202,15 @@ export default {
         </el-select>
       </article>
 
-       <el-button class="control--edit-button">Редактировать</el-button>
+       <el-button class="control--edit-button" type="warning" @click="handleEdit">Редактировать</el-button>
 
     </section>
 
     <section class="df-table">
-
       <b-table fixed :fields="fields" :items="items" class="mt-3" sort-by="name">
 
         <template #cell(first-year)="data">
-          <el-button >
+          <el-button @click="handleSelect({ label:'first-year',  field: data.item.name, data: data.item['first-year'] })">
             <template v-for="(i, idx) in data.item['first-year']" >
               <div class="table-cell--data-wrapper" :key="idx">
                 <p class="table-cell--title"> {{ i.name }}</p>
@@ -223,7 +224,7 @@ export default {
         </template>
 
         <template #cell(second-year)="data">
-          <el-button>
+          <el-button @click="handleSelect({ label:'second-year',  field: data.item.name, data: data.item['second-year'] })">
             <template v-for="(i, idx) in data.item['second-year']" >
               <div class="table-cell--data-wrapper" :key="idx">
                 <p class="table-cell--title"> {{ i.name }}</p>
@@ -251,7 +252,7 @@ export default {
         </template>
 
         <template #cell(fourth-year)="data">
-          <el-button>
+          <el-button @click="handleSelect({ label:'fourth-year',  field: data.item.name, data: data.item['fourth-year'] })">
             <template v-for="(i, idx) in data.item['fourth-year']" >
               <div class="table-cell--data-wrapper" :key="idx">
                 <p class="table-cell--title"> {{ i.name }}</p>
@@ -265,7 +266,7 @@ export default {
         </template>
 
         <template #cell(fifth-year)="data">
-          <el-button>
+          <el-button @click="handleSelect({ label:'fifth-year',  field: data.item.name, data: data.item['fifth-year'] })">
             <template v-for="(i, idx) in data.item['fifth-year']" >
               <div class="table-cell--data-wrapper" :key="idx">
                 <p class="table-cell--title"> {{ i.name }}</p>
@@ -300,14 +301,6 @@ export default {
 
 <style lang="scss" scoped>
 .df {
-  &-title {
-    padding-top: 15px;
-    color: #d8a331;
-    font-size: 20px;
-    font-family: DINPro-Medium, sans-serif;
-    width: 25%;
-    text-align: left;
-  }
 
   &-controls--wrapper {
     display: flex;

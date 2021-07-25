@@ -20,7 +20,7 @@ export default {
   data() {
     return {
       isEditForm: false,
-      editData: {},
+      editData: null,
     }
   },
   computed: {
@@ -36,7 +36,14 @@ export default {
       'fetchTableData',
     ]),
     handleChangeDisplayingMode() {
-      this.isEditForm = !this.isEditForm;
+      if (this.editData) {
+        this.isEditForm = !this.isEditForm;
+      } else {
+        this.$message({
+          message: 'Для редактирования необходимо выбрать ячейку',
+          type: 'warning'
+        });
+      }
     },
     handleSelectCell(cell) {
       console.log('cell', cell);
@@ -49,17 +56,20 @@ export default {
 <template>
   <div id="app">
     <main class="main">
+      <h2 class="form-title">СЕВООБОРОТ</h2>
       <display-form
-        v-if="!isEditForm"
-        :orgs="this.$options.ORGS"
-        :farmingFields="this.$options.FARMING_FIELDS"
-        :plants="this.$options.PLANTS"
-        :years="this.$options.YEARS"
-        :table-data="tableData"
-        @change-displaying="handleChangeDisplayingMode"
-        @select-cell="handleSelectCell"
+          v-if="!isEditForm"
+          :orgs="this.$options.ORGS"
+          :farmingFields="this.$options.FARMING_FIELDS"
+          :plants="this.$options.PLANTS"
+          :years="this.$options.YEARS"
+          :table-data="tableData"
+          @toggle-edit="handleChangeDisplayingMode"
+          @select-cell="handleSelectCell"
       />
-      <edit-form v-else/>
+      <edit-form
+          v-else
+          @toggle-edit="handleChangeDisplayingMode"/>
     </main>
   </div>
 </template>
@@ -93,5 +103,14 @@ export default {
 
 td {
   vertical-align: middle !important;
+}
+
+.form-title {
+  padding-top: 15px;
+  color: #d8a331;
+  font-size: 20px;
+  font-family: DINPro-Medium, sans-serif;
+  width: 25%;
+  text-align: left;
 }
 </style>
