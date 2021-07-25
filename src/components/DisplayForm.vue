@@ -91,11 +91,31 @@ export default {
       // фильтруем по полю
       let filteredResult = [];
 
+
       if (this.selected.farmingField !== -1) {
         const ff = this.farmingFields.find(f => f.Id === this.selected.farmingField);
         filteredResult = res.filter(r => r.name === ff.Name);
       } else {
-      filteredResult = res;
+        filteredResult = res;
+      }
+
+      // фильтруем по культуре
+      let tempResult = [];
+      if (this.selected.plant !== -1) {
+        const ff = this.plants.find(f => f.Id === this.selected.plant);
+       tempResult = filteredResult.filter(fr => {
+          for (let i in fr) {
+            if (typeof fr[i] !== 'string') {
+            const test = fr[i]?.find(plant => plant.name === ff.Name)
+            if (test) {
+              return fr
+            }
+            }
+          }
+        })
+       if (tempResult.length > 0) {
+         filteredResult = tempResult;
+       }
       }
 
 
