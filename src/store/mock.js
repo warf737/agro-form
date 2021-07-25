@@ -93,36 +93,6 @@ export const DEFAULT_TABLE_DATA = [
     },
   },
   {
-    name: 'поле5',
-    year: 2021,
-    sowing: {
-      name: 'Капуста',
-      grades: [
-        {
-          name: 'Тайфун',
-          reproduction: 'Элита',
-          plan: 5,
-          fact: 5
-        }
-      ]
-    },
-  },
-  {
-    name: 'поле5',
-    year: 2021,
-    sowing: {
-      name: 'Цикорий',
-      grades: [
-        {
-          name: 'Александрит',
-          reproduction: 'Элита',
-          plan: 1,
-          fact: 3
-        }
-      ]
-    },
-  },
-  {
     name: 'поле6',
     sowing: []
   },

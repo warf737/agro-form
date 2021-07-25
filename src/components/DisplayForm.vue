@@ -24,6 +24,7 @@ export default {
   computed: {
     temp() {
       return this.tableData.reduce((acc, item) => {
+
         if (acc[item.name]) {
           acc[item.name].push(item)
         } else {
@@ -33,26 +34,24 @@ export default {
       }, {})
       },
 
-
     items() {
-
       let items = [];
 
-      this.tableFields.forEach(field => {
+      this.fields.forEach(field => {
         if (field.label !== 'Поле') {
           items.push({ key: field.key, label: field.label })
         }
       })
 
       let res = [];
-      let temp1 = {...this.temp};
+      let temp1 = { ...this.temp };
       for (const [key, values] of Object.entries(temp1)) {
         let field = { name: key};
 
         items.forEach(({ key, label}) => {
           let newAr = [];
           newAr = values.filter(({ year }) => year === Number(label));
-          field[key] = newAr.length > 0 ? newAr : '';
+          field[key] = newAr.map(({ sowing }) => sowing) || [];
         });
         res.push(field);
 
@@ -62,44 +61,56 @@ export default {
     },
 
 
-    tableFields() {
+    fields() {
       let res = [];
       res.push({
         key: 'name',
         label: 'Поле',
-        sortable: false
+        sortable: true
       });
       res.push({
         key: 'first-year',
-        label: getYear(subYears(new Date(this.selected.year), 2)).toString()
+        label: getYear(subYears(new Date(this.selected.year), 2)).toString(),
       });
 
       res.push({
         key: 'second-year',
-        label: getYear(subYears(new Date(this.selected.year), 1)).toString()
+        label: getYear(subYears(new Date(this.selected.year), 1)).toString(),
       });
 
       res.push({
         key: 'third-year',
-        label: this.selected.year
+        label: this.selected.year,
       });
 
       res.push({
         key: 'fourth-year',
-        label: getYear(addYears(new Date(this.selected.year), 1)).toString()
+        label: getYear(addYears(new Date(this.selected.year), 1)).toString(),
       });
 
       res.push({
         key: 'fifth-year',
-        label: getYear(addYears(new Date(this.selected.year), 2)).toString()
+        label: getYear(addYears(new Date(this.selected.year), 2)).toString(),
       });
       return res;
     },
   },
   methods: {
-    getSubTableData(year) {
-      console.log('1', year);
+    getTotalSquares(grades) {
+      let factTotal = 0;
+      let planTotal = 0;
+
+      grades.forEach(({ square }) => {
+        factTotal += square.fact;
+        planTotal += square.plan;
+      });
+
+      return { fact : factTotal, plan: planTotal };
     },
+    handleSelect(cell) {
+      const year = this.fields.find(field => field.key === cell.label).label
+      this.$emit('select-cell', {...cell, year: year });
+    }
   },
 };
 </script>
@@ -163,9 +174,80 @@ export default {
 
     <section class="df-table">
 
-      <b-table hover :fields="tableFields" :items="items"></b-table>
+      <b-table fixed :fields="fields" :items="items" class="mt-3" sort-by="name">
 
-      {{ items }}
+        <template #cell(first-year)="data" @click="handleSelect">
+          <el-button >
+            <template v-for="(i, idx) in data.item['first-year']" >
+              <div class="table-cell--data-wrapper" :key="idx">
+                <p class="table-cell--title"> {{ i.name }}</p>
+                <p>
+                  <span class="data-plan">{{ `${getTotalSquares(i.grades).plan}` }}</span>
+                  <span class="data-fact"> {{ ` / ${getTotalSquares(i.grades).fact}` }}</span>
+                </p>
+              </div>
+            </template>
+          </el-button>
+        </template>
+
+        <template #cell(second-year)="data">
+          <el-button>
+            <template v-for="(i, idx) in data.item['second-year']" >
+              <div class="table-cell--data-wrapper" :key="idx">
+                <p class="table-cell--title"> {{ i.name }}</p>
+                <p>
+                  <span class="data-plan">{{ `${getTotalSquares(i.grades).plan}` }}</span>
+                  <span class="data-fact"> {{ ` / ${getTotalSquares(i.grades).fact}` }}</span>
+                </p>
+              </div>
+            </template>
+          </el-button>
+        </template>
+
+        <template #cell(third-year)="data">
+
+          <el-button @click="handleSelect({ label:'third-year',  field: data.item.name, data: data.item['third-year'] })">
+            <template v-for="(i, idx) in data.item['third-year']" >
+              <div class="table-cell--data-wrapper" :key="idx">
+                <p class="table-cell--title"> {{ i.name }}</p>
+                <p>
+                  <span class="data-plan">{{ `${getTotalSquares(i.grades).plan}` }}</span>
+                  <span class="data-fact"> {{ ` / ${getTotalSquares(i.grades).fact}` }}</span>
+                </p>
+              </div>
+            </template>
+          </el-button>
+        </template>
+
+        <template #cell(fourth-year)="data">
+          <el-button>
+            <template v-for="(i, idx) in data.item['fourth-year']" >
+              <div class="table-cell--data-wrapper" :key="idx">
+                <p class="table-cell--title"> {{ i.name }}</p>
+                <p>
+                  <span class="data-plan">{{ `${getTotalSquares(i.grades).plan}` }}</span>
+                  <span class="data-fact"> {{ ` / ${getTotalSquares(i.grades).fact}` }}</span>
+                </p>
+              </div>
+            </template>
+          </el-button>
+        </template>
+
+        <template #cell(fifth-year)="data">
+          <el-button>
+            <template v-for="(i, idx) in data.item['fifth-year']" >
+              <div class="table-cell--data-wrapper" :key="idx">
+                <p class="table-cell--title"> {{ i.name }}</p>
+                <p>
+                  <span class="data-plan">{{ `${getTotalSquares(i.grades).plan}` }}</span>
+                  <span class="data-fact"> {{ ` / ${getTotalSquares(i.grades).fact}` }}</span>
+                </p>
+              </div>
+            </template>
+          </el-button>
+        </template>
+
+      </b-table>
 
     </section>
   </div>
@@ -193,9 +275,6 @@ export default {
     margin-right: 6px;
 
   }
-
-  &-table {}
-
 }
 
 
@@ -233,4 +312,39 @@ export default {
 .control--edit-button span {
   color: white;
 }
+
+.table-cell {
+
+  &--data-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+}
+
+.el-button {
+  padding: 5px 5px !important;
+  min-width: 150px;
+  min-height: 50px;
+  border: none !important;
+
+  .table-cell--title{
+    color: rgb(6, 170, 159) !important;
+  }
+
+  .table-cell--title, p {
+    margin-bottom: 5px;
+  }
+}
+
+.data-fact {
+  color: #06aa9f;
+}
+
+.data-plan {
+  color: #d8a331;
+}
+.sr-only {
+  display: none;
+ }
 </style>

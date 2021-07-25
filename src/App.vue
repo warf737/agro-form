@@ -20,6 +20,7 @@ export default {
   data() {
     return {
       isEditForm: false,
+      editData: {},
     }
   },
   computed: {
@@ -36,7 +37,11 @@ export default {
     ]),
     handleChangeDisplayingMode() {
       this.isEditForm = !this.isEditForm;
-    }
+    },
+    handleSelectCell(cell) {
+      console.log('cell', cell);
+      this.editData = cell;
+    },
   },
 }
 </script>
@@ -52,6 +57,7 @@ export default {
         :years="this.$options.YEARS"
         :table-data="tableData"
         @change-displaying="handleChangeDisplayingMode"
+        @select-cell="handleSelectCell"
       />
       <edit-form v-else/>
     </main>
