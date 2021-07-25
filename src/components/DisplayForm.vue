@@ -156,7 +156,7 @@ export default {
 
       <article class="df-controls--control">
         <p class="control-title">Отделение</p>
-        <el-select  v-model="selected.org" filterable placeholder="">
+        <el-select  v-model="selected.org" filterable size="small">
           <el-option
               v-for="(org, idx) in orgs"
               :key="idx"
@@ -168,7 +168,7 @@ export default {
 
       <article class="df-controls--control">
         <p class="control-title">Культура</p>
-        <el-select  v-model="selected.plant" filterable placeholder="">
+        <el-select  v-model="selected.plant" filterable size="small">
           <el-option
               v-for="(plant, idx) in plants"
               :key="idx"
@@ -180,7 +180,7 @@ export default {
 
       <article class="df-controls--control">
         <p class="control-title">Год</p>
-        <el-select  v-model="selected.year" filterable placeholder="">
+        <el-select  v-model="selected.year" filterable size="small">
           <el-option
               v-for="(year, idx) in years"
               :key="idx"
@@ -192,7 +192,7 @@ export default {
 
       <article class="df-controls--control">
         <p class="control-title">Поле</p>
-        <el-select  v-model="selected.farmingField" filterable placeholder="">
+        <el-select  v-model="selected.farmingField" filterable size="small">
           <el-option
               v-for="(field, idx) in farmingFields"
               :key="idx"
@@ -202,7 +202,14 @@ export default {
         </el-select>
       </article>
 
-       <el-button class="control--edit-button" type="warning" @click="handleEdit">Редактировать</el-button>
+       <el-button
+           class="control--edit-button"
+           type="warning"
+           size="small"
+           @click="handleEdit"
+       >
+         Редактировать
+       </el-button>
 
     </section>
 
@@ -363,18 +370,20 @@ export default {
 
 }
 
-.el-button {
-  padding: 5px 5px !important;
-  min-width: 150px;
-  min-height: 50px;
-  border: none !important;
+tbody {
+  .el-button {
+    padding: 5px 5px !important;
+    min-width: 150px;
+    min-height: 50px;
+    border: none !important;
 
-  .table-cell--title{
-    color: rgb(6, 170, 159) !important;
-  }
+    .table-cell--title{
+      color: rgb(6, 170, 159) !important;
+    }
 
-  .table-cell--title, p {
-    margin-bottom: 5px;
+    .table-cell--title, p {
+      margin-bottom: 5px;
+    }
   }
 }
 
@@ -408,5 +417,9 @@ export default {
 
 .el-pagination {
   margin-left: auto;
+}
+
+.el-button {
+  border: none !important;
 }
 </style>
