@@ -138,7 +138,8 @@ export default {
       return { fact : factTotal, plan: planTotal };
     },
     handleSelect(cell) {
-      const year = this.items.find(field => field.key === cell.label)
+      console.log(cell);
+      const year = this.fields.find(field => field.key === cell.label).label
       this.$emit('select-cell', {...cell, year: year });
     },
     handleEdit() {
@@ -323,30 +324,12 @@ export default {
 
 <style lang="scss" scoped>
 .df {
-
-  &-controls--wrapper {
-    display: flex;
-    margin-top: 10px;
-    font-family: DINPro, sans-serif;
-  }
-
-  &-controls--control {
-    display: flex;
-    flex-direction: column;
-    margin-right: 6px;
-
-  }
-
   &-pagination {
     display: flex;
   }
 }
 
 .control {
-  &-title {
-    margin: 0 auto 0 0;
-    line-height: 1.42857143;
-  }
   &--edit-button {
     margin-top: auto;
     margin-left: auto;
@@ -358,21 +341,42 @@ export default {
 
 
 <style lang="scss">
-.df-controls--wrapper {
-  :nth-child(1) >.el-select {
-    width: 175px;
+
+.df {
+  &-controls--wrapper {
+    display: flex;
+    margin-top: 10px;
+    font-family: DINPro, sans-serif;
+
+    :nth-child(1) >.el-select {
+      width: 175px;
+    }
+    :nth-child(2) >.el-select {
+      width: 175px;
+    }
+    :nth-child(3) >.el-select {
+      width: 77px;
+    }
+    :nth-child(4) >.el-select {
+      width: 150px;
+    }
+
   }
-  :nth-child(2) >.el-select {
-    width: 175px;
+
+  &-controls--control {
+    display: flex;
+    flex-direction: column;
+    margin-right: 6px;
   }
-  :nth-child(3) >.el-select {
-    width: 77px;
-  }
-  :nth-child(4) >.el-select {
-    width: 150px;
-  }
+
 }
 
+.control {
+  &-title {
+    margin: 0 auto 0 0;
+    line-height: 1.42857143;
+  }
+}
 .control--edit-button span {
   color: white;
 }
@@ -382,7 +386,6 @@ export default {
     display: flex;
     justify-content: space-between;
   }
-
 }
 
 tbody {

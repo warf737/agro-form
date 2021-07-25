@@ -72,6 +72,9 @@ export default {
       />
       <edit-form
           v-else
+          :years="this.$options.YEARS"
+          :farmingFields="this.$options.FARMING_FIELDS"
+          :editData="editData"
           @toggle-edit="handleChangeDisplayingMode"/>
     </main>
   </div>
@@ -115,5 +118,15 @@ td {
   font-family: DINPro-Medium, sans-serif;
   width: 25%;
   text-align: left;
+}
+
+thead, tbody, tfoot, tr, td, th {
+  border-color: #06aa9f !important;
+}
+
+.el-input__inner {
+  color: #06aa9f !important;
+  border-color: #06aa9f !important;
+  border-radius: 0 !important;
 }
 </style>
