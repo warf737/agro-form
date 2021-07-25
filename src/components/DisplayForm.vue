@@ -17,50 +17,10 @@ export default {
         plant: -1,
         year: getYear(new Date()).toString(),
         farmingField: -1,
-
       }
     };
   },
   computed: {
-    temp() {
-      return this.tableData.reduce((acc, item) => {
-
-        if (acc[item.name]) {
-          acc[item.name].push(item)
-        } else {
-          acc[item.name] = [item];
-        }
-        return acc
-      }, {})
-      },
-
-    items() {
-      let items = [];
-
-      this.fields.forEach(field => {
-        if (field.label !== 'Поле') {
-          items.push({ key: field.key, label: field.label })
-        }
-      })
-
-      let res = [];
-      let temp1 = { ...this.temp };
-      for (const [key, values] of Object.entries(temp1)) {
-        let field = { name: key};
-
-        items.forEach(({ key, label}) => {
-          let newAr = [];
-          newAr = values.filter(({ year }) => year === Number(label));
-          field[key] = newAr.map(({ sowing }) => sowing) || [];
-        });
-        res.push(field);
-
-      }
-
-      return res;
-    },
-
-
     fields() {
       let res = [];
       res.push({
@@ -94,6 +54,55 @@ export default {
       });
       return res;
     },
+
+    items() {
+      // группируем данные по полям
+      const temp = this.tableData.reduce((acc, item) => {
+        if (acc[item.name]) {
+          acc[item.name].push(item)
+        } else {
+          acc[item.name] = [item];
+        }
+        return acc
+      }, {});
+
+      // записываем в данные полей информацию о показываемых периодах
+      let items = [];
+      this.fields.forEach(field => {
+        if (field.label !== 'Поле') {
+          items.push({ key: field.key, label: field.label })
+        }
+      })
+
+      // записываем в показываемые периоды данные по ним
+      let res = [];
+      for (const [key, values] of Object.entries(temp)) {
+        let field = { name: key};
+
+        items.forEach(({ key, label}) => {
+          let newAr = [];
+          newAr = values.filter(({ year }) => year === Number(label));
+          field[key] = newAr.map(({ sowing }) => sowing) || [];
+        });
+        res.push(field);
+      }
+
+
+      // фильтруем по полю
+      let filteredResult = [];
+
+      if (this.selected.farmingField !== -1) {
+        const ff = this.farmingFields.find(f => f.Id === this.selected.farmingField);
+        filteredResult = res.filter(r => r.name === ff.Name);
+      } else {
+      filteredResult = res;
+      }
+
+
+
+
+      return filteredResult;
+    },
   },
   methods: {
     getTotalSquares(grades) {
@@ -108,7 +117,7 @@ export default {
       return { fact : factTotal, plan: planTotal };
     },
     handleSelect(cell) {
-      const year = this.fields.find(field => field.key === cell.label).label
+      const year = this.items.find(field => field.key === cell.label).label
       this.$emit('select-cell', {...cell, year: year });
     }
   },
@@ -176,7 +185,7 @@ export default {
 
       <b-table fixed :fields="fields" :items="items" class="mt-3" sort-by="name">
 
-        <template #cell(first-year)="data" @click="handleSelect">
+        <template #cell(first-year)="data">
           <el-button >
             <template v-for="(i, idx) in data.item['first-year']" >
               <div class="table-cell--data-wrapper" :key="idx">
@@ -205,7 +214,6 @@ export default {
         </template>
 
         <template #cell(third-year)="data">
-
           <el-button @click="handleSelect({ label:'third-year',  field: data.item.name, data: data.item['third-year'] })">
             <template v-for="(i, idx) in data.item['third-year']" >
               <div class="table-cell--data-wrapper" :key="idx">

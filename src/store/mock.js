@@ -1,5 +1,9 @@
 export const DEFAULT_TABLE_DATA = [
   {
+    name: 'поле1',
+    sowing: []
+  },
+  {
     name: 'поле2',
     year: 2021,
     sowing: {
