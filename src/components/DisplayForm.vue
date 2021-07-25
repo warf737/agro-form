@@ -22,47 +22,76 @@ export default {
     };
   },
   computed: {
-    displayingFields() {
+    temp() {
+      return this.tableData.reduce((acc, item) => {
+        if (acc[item.name]) {
+          acc[item.name].push(item)
+        } else {
+          acc[item.name] = [item];
+        }
+        return acc
+      }, {})
+      },
 
-      const getSowing = (date, data) =>  {
-        return data.sowing.filter(i => i.year.toString() === date)
-      };
-      return this.tableData.map(item => {
-        return {
-          ...item,
-          'first-year': getSowing(this.displayingDates[0].year, item),
-          'second-year': getSowing(this.displayingDates[1].year, item),
-          'third-year': getSowing(this.displayingDates[2].year, item),
-          'fourth-year': getSowing(this.displayingDates[3].year, item),
-          'fifth-year': getSowing(this.displayingDates[4].year, item),
+
+    items() {
+
+      let items = [];
+
+      this.tableFields.forEach(field => {
+        if (field.label !== 'Поле') {
+          items.push({ key: field.key, label: field.label })
         }
       })
+
+      let res = [];
+      let temp1 = {...this.temp};
+      for (const [key, values] of Object.entries(temp1)) {
+        let field = { name: key};
+
+        items.forEach(({ key, label}) => {
+          let newAr = [];
+          newAr = values.filter(({ year }) => year === Number(label));
+          field[key] = newAr.length > 0 ? newAr : '';
+        });
+        res.push(field);
+
+      }
+
+      return res;
     },
-    displayingDates() {
+
+
+    tableFields() {
       let res = [];
       res.push({
-        label: 'first-year',
-        year: getYear (subYears(new Date(this.selected.year), 2)).toString()
+        key: 'name',
+        label: 'Поле',
+        sortable: false
+      });
+      res.push({
+        key: 'first-year',
+        label: getYear(subYears(new Date(this.selected.year), 2)).toString()
       });
 
       res.push({
-        label: 'second-year',
-        year: getYear (subYears(new Date(this.selected.year), 1)).toString()
+        key: 'second-year',
+        label: getYear(subYears(new Date(this.selected.year), 1)).toString()
       });
 
       res.push({
-        label: 'third-year',
-        year: this.selected.year
+        key: 'third-year',
+        label: this.selected.year
       });
 
       res.push({
-        label: 'fourth-year',
-        year: getYear (addYears(new Date(this.selected.year), 1)).toString()
+        key: 'fourth-year',
+        label: getYear(addYears(new Date(this.selected.year), 1)).toString()
       });
 
       res.push({
-        label: 'fifth-year',
-        year: getYear (addYears(new Date(this.selected.year), 2)).toString()
+        key: 'fifth-year',
+        label: getYear(addYears(new Date(this.selected.year), 2)).toString()
       });
       return res;
     },
@@ -133,37 +162,11 @@ export default {
     </section>
 
     <section class="df-table">
-      <el-table
-          :data="displayingFields"
-          style="width: 100%"
-      >
-        <el-table-column
-            prop="name"
-            label="Поле"
-            width="180">
-        </el-table-column>
 
-        <template v-for="({ year, label}, index) in displayingDates">
-            <el-table-column
-                :key="index"
-                :label="year"
-                :prop="label"
-                width="180">
-              <template slot-scope="scope">
+      <b-table hover :fields="tableFields" :items="items"></b-table>
 
-                <el-table :data="scope.row">
-                  <el-table-column
-                      :prop="getSubTableData(name)"
-                      label=""
-                      width="100">
-                  </el-table-column>
-                </el-table>
-              </template>
-          </el-table-column>
-        </template>
+      {{ items }}
 
-
-      </el-table>
     </section>
   </div>
 </template>
