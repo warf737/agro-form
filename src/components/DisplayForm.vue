@@ -1,13 +1,14 @@
 <script>
-import getYear from 'date-fns/getYear';
+import { getYear, addYears, subYears } from 'date-fns';
 
 export default {
   name: 'DisplayForm',
   props: {
-    orgs: { type: Array, require: true},
-    farmingFields: { type: Array, require: true},
-    plants: { type: Array, require: true},
-    years: { type: Array, require: true},
+    orgs: { type: Array, required: true },
+    farmingFields: { type: Array, required: true },
+    plants: { type: Array, required: true },
+    years: { type: Array, required: true },
+    tableData: { type: Array, required: true },
   },
   data () {
     return {
@@ -21,8 +22,56 @@ export default {
     };
   },
   computed: {
+    displayingFields() {
+
+      const getSowing = (date, data) =>  {
+        return data.sowing.filter(i => i.year.toString() === date)
+      };
+      return this.tableData.map(item => {
+        return {
+          ...item,
+          'first-year': getSowing(this.displayingDates[0].year, item),
+          'second-year': getSowing(this.displayingDates[1].year, item),
+          'third-year': getSowing(this.displayingDates[2].year, item),
+          'fourth-year': getSowing(this.displayingDates[3].year, item),
+          'fifth-year': getSowing(this.displayingDates[4].year, item),
+        }
+      })
+    },
+    displayingDates() {
+      let res = [];
+      res.push({
+        label: 'first-year',
+        year: getYear (subYears(new Date(this.selected.year), 2)).toString()
+      });
+
+      res.push({
+        label: 'second-year',
+        year: getYear (subYears(new Date(this.selected.year), 1)).toString()
+      });
+
+      res.push({
+        label: 'third-year',
+        year: this.selected.year
+      });
+
+      res.push({
+        label: 'fourth-year',
+        year: getYear (addYears(new Date(this.selected.year), 1)).toString()
+      });
+
+      res.push({
+        label: 'fifth-year',
+        year: getYear (addYears(new Date(this.selected.year), 2)).toString()
+      });
+      return res;
+    },
   },
-  methods: {},
+  methods: {
+    getSubTableData(year) {
+      console.log('1', year);
+    },
+  },
 };
 </script>
 
@@ -84,7 +133,37 @@ export default {
     </section>
 
     <section class="df-table">
+      <el-table
+          :data="displayingFields"
+          style="width: 100%"
+      >
+        <el-table-column
+            prop="name"
+            label="Поле"
+            width="180">
+        </el-table-column>
 
+        <template v-for="({ year, label}, index) in displayingDates">
+            <el-table-column
+                :key="index"
+                :label="year"
+                :prop="label"
+                width="180">
+              <template slot-scope="scope">
+
+                <el-table :data="scope.row">
+                  <el-table-column
+                      :prop="getSubTableData(name)"
+                      label=""
+                      width="100">
+                  </el-table-column>
+                </el-table>
+              </template>
+          </el-table-column>
+        </template>
+
+
+      </el-table>
     </section>
   </div>
 </template>

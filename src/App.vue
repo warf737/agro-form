@@ -5,6 +5,7 @@ import { FIELD_LIST,
          ORG_LIST,
          PLANTS_LIST,
          YEARS_LIST } from './constants';
+import { mapActions, mapGetters } from 'vuex';
 
 export default {
   name: 'App',
@@ -21,7 +22,18 @@ export default {
       isEditForm: false,
     }
   },
+  computed: {
+    ...mapGetters([
+        'tableData',
+    ])
+  },
+  created() {
+    this.fetchTableData();
+  },
   methods: {
+    ...mapActions([
+      'fetchTableData',
+    ]),
     handleChangeDisplayingMode() {
       this.isEditForm = !this.isEditForm;
     }
@@ -38,6 +50,7 @@ export default {
         :farmingFields="this.$options.FARMING_FIELDS"
         :plants="this.$options.PLANTS"
         :years="this.$options.YEARS"
+        :table-data="tableData"
         @change-displaying="handleChangeDisplayingMode"
       />
       <edit-form v-else/>
