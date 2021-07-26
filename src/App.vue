@@ -86,8 +86,6 @@ export default {
   color: #008c83;
   font-weight: normal;
   font-size: 14px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
 
   position: absolute;
@@ -120,8 +118,19 @@ td {
   text-align: left;
 }
 
+table {
+  text-align: left;
+}
+
 thead, tbody, tfoot, tr, td, th {
   border-color: #06aa9f !important;
+}
+
+h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
+  margin-top: 0 !important;
+  margin-bottom: 0 ;
+  font-weight: 500 !important;
+  line-height: 1.2 !important;
 }
 
 .el-input__inner {

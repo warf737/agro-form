@@ -1631,3 +1631,1455 @@ export const YEARS_LIST = [
 ];
 
 
+export const PLANTS_AND_SORTS = [
+  {
+    "Values": [
+      {
+        "Name": "Абрикос",
+        "Id": 74,
+        "Bold": null,
+        "Price": null,
+        "Balance": null,
+        "Current_price": null,
+        "Description": null,
+        "Manufacturer": null,
+        "Area_plant": 0.0,
+        "Area": 0.0,
+        "index": null,
+        "emp_emp_id": null,
+        "RepairStatus": null
+      }
+    ],
+    "Name": "Абрикос",
+    "Id": 23,
+    "Bold": null,
+    "Price": null,
+    "Balance": null,
+    "Current_price": null,
+    "Description": null,
+    "Manufacturer": null,
+    "Area_plant": 0.0,
+    "Area": 0.0,
+    "index": null,
+    "emp_emp_id": null,
+    "RepairStatus": null
+  },
+  {
+    "Values": [],
+    "Name": "Алыча",
+    "Id": 33,
+    "Bold": null,
+    "Price": null,
+    "Balance": null,
+    "Current_price": null,
+    "Description": null,
+    "Manufacturer": null,
+    "Area_plant": 0.0,
+    "Area": 0.0,
+    "index": null,
+    "emp_emp_id": null,
+    "RepairStatus": null
+  },
+  {
+    "Values": [],
+    "Name": "Вишня",
+    "Id": 31,
+    "Bold": null,
+    "Price": null,
+    "Balance": null,
+    "Current_price": null,
+    "Description": null,
+    "Manufacturer": null,
+    "Area_plant": 0.0,
+    "Area": 0.0,
+    "index": null,
+    "emp_emp_id": null,
+    "RepairStatus": null
+  },
+  {
+    "Values": [
+      {
+        "Name": "Вывед. уч-к",
+        "Id": 76,
+        "Bold": null,
+        "Price": null,
+        "Balance": null,
+        "Current_price": null,
+        "Description": null,
+        "Manufacturer": null,
+        "Area_plant": 0.0,
+        "Area": 0.0,
+        "index": null,
+        "emp_emp_id": null,
+        "RepairStatus": null
+      }
+    ],
+    "Name": "Выведенный участок",
+    "Id": 26,
+    "Bold": null,
+    "Price": null,
+    "Balance": null,
+    "Current_price": null,
+    "Description": null,
+    "Manufacturer": null,
+    "Area_plant": 0.0,
+    "Area": 0.0,
+    "index": null,
+    "emp_emp_id": null,
+    "RepairStatus": null
+  },
+  {
+    "Values": [
+      {
+        "Name": "Бельмондо",
+        "Id": 42,
+        "Bold": null,
+        "Price": null,
+        "Balance": null,
+        "Current_price": null,
+        "Description": null,
+        "Manufacturer": null,
+        "Area_plant": 0.0,
+        "Area": 0.0,
+        "index": null,
+        "emp_emp_id": null,
+        "RepairStatus": null
+      },
+      {
+        "Name": "Джек Пот",
+        "Id": 43,
+        "Bold": null,
+        "Price": null,
+        "Balance": null,
+        "Current_price": null,
+        "Description": null,
+        "Manufacturer": null,
+        "Area_plant": 0.0,
+        "Area": 0.0,
+        "index": null,
+        "emp_emp_id": null,
+        "RepairStatus": null
+      },
+      {
+        "Name": "Фараон",
+        "Id": 44,
+        "Bold": null,
+        "Price": null,
+        "Balance": null,
+        "Current_price": null,
+        "Description": null,
+        "Manufacturer": null,
+        "Area_plant": 0.0,
+        "Area": 0.0,
+        "index": null,
+        "emp_emp_id": null,
+        "RepairStatus": null
+      }
+    ],
+    "Name": "Горох",
+    "Id": 11,
+    "Bold": null,
+    "Price": null,
+    "Balance": null,
+    "Current_price": null,
+    "Description": null,
+    "Manufacturer": null,
+    "Area_plant": 0.0,
+    "Area": 0.0,
+    "index": null,
+    "emp_emp_id": null,
+    "RepairStatus": null
+  },
+  {
+    "Values": [
+      {
+        "Name": "Девятка",
+        "Id": 99,
+        "Bold": null,
+        "Price": null,
+        "Balance": null,
+        "Current_price": null,
+        "Description": null,
+        "Manufacturer": null,
+        "Area_plant": 0.0,
+        "Area": 0.0,
+        "index": null,
+        "emp_emp_id": null,
+        "RepairStatus": null
+      }
+    ],
+    "Name": "Гречиха",
+    "Id": 41,
+    "Bold": null,
+    "Price": null,
+    "Balance": null,
+    "Current_price": null,
+    "Description": null,
+    "Manufacturer": null,
+    "Area_plant": 0.0,
+    "Area": 0.0,
+    "index": null,
+    "emp_emp_id": null,
+    "RepairStatus": null
+  },
+  {
+    "Values": [
+      {
+        "Name": "Нет сорта",
+        "Id": 80,
+        "Bold": null,
+        "Price": null,
+        "Balance": null,
+        "Current_price": null,
+        "Description": null,
+        "Manufacturer": null,
+        "Area_plant": 0.0,
+        "Area": 0.0,
+        "index": null,
+        "emp_emp_id": null,
+        "RepairStatus": null
+      }
+    ],
+    "Name": "Груша",
+    "Id": 39,
+    "Bold": null,
+    "Price": null,
+    "Balance": null,
+    "Current_price": null,
+    "Description": null,
+    "Manufacturer": null,
+    "Area_plant": 0.0,
+    "Area": 0.0,
+    "index": null,
+    "emp_emp_id": null,
+    "RepairStatus": null
+  },
+  {
+    "Values": [
+      {
+        "Name": "День поля",
+        "Id": 75,
+        "Bold": null,
+        "Price": null,
+        "Balance": null,
+        "Current_price": null,
+        "Description": null,
+        "Manufacturer": null,
+        "Area_plant": 0.0,
+        "Area": 0.0,
+        "index": null,
+        "emp_emp_id": null,
+        "RepairStatus": null
+      }
+    ],
+    "Name": "День поля",
+    "Id": 25,
+    "Bold": null,
+    "Price": null,
+    "Balance": null,
+    "Current_price": null,
+    "Description": null,
+    "Manufacturer": null,
+    "Area_plant": 0.0,
+    "Area": 0.0,
+    "index": null,
+    "emp_emp_id": null,
+    "RepairStatus": null
+  },
+  {
+    "Values": [
+      {
+        "Name": "Земляника (закладка)",
+        "Id": 93,
+        "Bold": null,
+        "Price": null,
+        "Balance": null,
+        "Current_price": null,
+        "Description": null,
+        "Manufacturer": null,
+        "Area_plant": 0.0,
+        "Area": 0.0,
+        "index": null,
+        "emp_emp_id": null,
+        "RepairStatus": null
+      },
+      {
+        "Name": "Нет сорта",
+        "Id": 70,
+        "Bold": null,
+        "Price": null,
+        "Balance": null,
+        "Current_price": null,
+        "Description": null,
+        "Manufacturer": null,
+        "Area_plant": 0.0,
+        "Area": 0.0,
+        "index": null,
+        "emp_emp_id": null,
+        "RepairStatus": null
+      }
+    ],
+    "Name": "Земляника",
+    "Id": 9,
+    "Bold": null,
+    "Price": null,
+    "Balance": null,
+    "Current_price": null,
+    "Description": null,
+    "Manufacturer": null,
+    "Area_plant": 0.0,
+    "Area": 0.0,
+    "index": null,
+    "emp_emp_id": null,
+    "RepairStatus": null
+  },
+  {
+    "Values": [],
+    "Name": "Зерносмесь на сено (ячмень+горох)",
+    "Id": 40,
+    "Bold": null,
+    "Price": null,
+    "Balance": null,
+    "Current_price": null,
+    "Description": null,
+    "Manufacturer": null,
+    "Area_plant": 0.0,
+    "Area": 0.0,
+    "index": null,
+    "emp_emp_id": null,
+    "RepairStatus": null
+  },
+  {
+    "Values": [
+      {
+        "Name": "Адаптор",
+        "Id": 88,
+        "Bold": null,
+        "Price": null,
+        "Balance": null,
+        "Current_price": null,
+        "Description": null,
+        "Manufacturer": null,
+        "Area_plant": 0.0,
+        "Area": 0.0,
+        "index": null,
+        "emp_emp_id": null,
+        "RepairStatus": null
+      },
+      {
+        "Name": "Тайфун",
+        "Id": 89,
+        "Bold": null,
+        "Price": null,
+        "Balance": null,
+        "Current_price": null,
+        "Description": null,
+        "Manufacturer": null,
+        "Area_plant": 0.0,
+        "Area": 0.0,
+        "index": null,
+        "emp_emp_id": null,
+        "RepairStatus": null
+      },
+      {
+        "Name": "F1 Тайфун",
+        "Id": 102,
+        "Bold": null,
+        "Price": null,
+        "Balance": null,
+        "Current_price": null,
+        "Description": null,
+        "Manufacturer": null,
+        "Area_plant": 0.0,
+        "Area": 0.0,
+        "index": null,
+        "emp_emp_id": null,
+        "RepairStatus": null
+      },
+      {
+        "Name": "Адаптор",
+        "Id": 103,
+        "Bold": null,
+        "Price": null,
+        "Balance": null,
+        "Current_price": null,
+        "Description": null,
+        "Manufacturer": null,
+        "Area_plant": 0.0,
+        "Area": 0.0,
+        "index": null,
+        "emp_emp_id": null,
+        "RepairStatus": null
+      },
+      {
+        "Name": "Агрессор",
+        "Id": 25,
+        "Bold": null,
+        "Price": null,
+        "Balance": null,
+        "Current_price": null,
+        "Description": null,
+        "Manufacturer": null,
+        "Area_plant": 0.0,
+        "Area": 0.0,
+        "index": null,
+        "emp_emp_id": null,
+        "RepairStatus": null
+      },
+      {
+        "Name": "Ларсия",
+        "Id": 26,
+        "Bold": null,
+        "Price": null,
+        "Balance": null,
+        "Current_price": null,
+        "Description": null,
+        "Manufacturer": null,
+        "Area_plant": 0.0,
+        "Area": 0.0,
+        "index": null,
+        "emp_emp_id": null,
+        "RepairStatus": null
+      }
+    ],
+    "Name": "Капуста",
+    "Id": 8,
+    "Bold": null,
+    "Price": null,
+    "Balance": null,
+    "Current_price": null,
+    "Description": null,
+    "Manufacturer": null,
+    "Area_plant": 0.0,
+    "Area": 0.0,
+    "index": null,
+    "emp_emp_id": null,
+    "RepairStatus": null
+  },
+  {
+    "Values": [
+      {
+        "Name": "Белароза",
+        "Id": 1,
+        "Bold": null,
+        "Price": null,
+        "Balance": null,
+        "Current_price": null,
+        "Description": null,
+        "Manufacturer": null,
+        "Area_plant": 0.0,
+        "Area": 0.0,
+        "index": null,
+        "emp_emp_id": null,
+        "RepairStatus": null
+      },
+      {
+        "Name": "Велес Всемогущий",
+        "Id": 2,
+        "Bold": null,
+        "Price": null,
+        "Balance": null,
+        "Current_price": null,
+        "Description": null,
+        "Manufacturer": null,
+        "Area_plant": 0.0,
+        "Area": 0.0,
+        "index": null,
+        "emp_emp_id": null,
+        "RepairStatus": null
+      },
+      {
+        "Name": "Гала",
+        "Id": 3,
+        "Bold": null,
+        "Price": null,
+        "Balance": null,
+        "Current_price": null,
+        "Description": null,
+        "Manufacturer": null,
+        "Area_plant": 0.0,
+        "Area": 0.0,
+        "index": null,
+        "emp_emp_id": null,
+        "RepairStatus": null
+      },
+      {
+        "Name": "Голубой Дунас",
+        "Id": 4,
+        "Bold": null,
+        "Price": null,
+        "Balance": null,
+        "Current_price": null,
+        "Description": null,
+        "Manufacturer": null,
+        "Area_plant": 0.0,
+        "Area": 0.0,
+        "index": null,
+        "emp_emp_id": null,
+        "RepairStatus": null
+      },
+      {
+        "Name": "Лабелла",
+        "Id": 5,
+        "Bold": null,
+        "Price": null,
+        "Balance": null,
+        "Current_price": null,
+        "Description": null,
+        "Manufacturer": null,
+        "Area_plant": 0.0,
+        "Area": 0.0,
+        "index": null,
+        "emp_emp_id": null,
+        "RepairStatus": null
+      },
+      {
+        "Name": "Лига",
+        "Id": 6,
+        "Bold": null,
+        "Price": null,
+        "Balance": null,
+        "Current_price": null,
+        "Description": null,
+        "Manufacturer": null,
+        "Area_plant": 0.0,
+        "Area": 0.0,
+        "index": null,
+        "emp_emp_id": null,
+        "RepairStatus": null
+      },
+      {
+        "Name": "Маделена",
+        "Id": 7,
+        "Bold": null,
+        "Price": null,
+        "Balance": null,
+        "Current_price": null,
+        "Description": null,
+        "Manufacturer": null,
+        "Area_plant": 0.0,
+        "Area": 0.0,
+        "index": null,
+        "emp_emp_id": null,
+        "RepairStatus": null
+      },
+      {
+        "Name": "Наташа",
+        "Id": 8,
+        "Bold": null,
+        "Price": null,
+        "Balance": null,
+        "Current_price": null,
+        "Description": null,
+        "Manufacturer": null,
+        "Area_plant": 0.0,
+        "Area": 0.0,
+        "index": null,
+        "emp_emp_id": null,
+        "RepairStatus": null
+      },
+      {
+        "Name": "Парамаунт",
+        "Id": 9,
+        "Bold": null,
+        "Price": null,
+        "Balance": null,
+        "Current_price": null,
+        "Description": null,
+        "Manufacturer": null,
+        "Area_plant": 0.0,
+        "Area": 0.0,
+        "index": null,
+        "emp_emp_id": null,
+        "RepairStatus": null
+      },
+      {
+        "Name": "Пикассо",
+        "Id": 10,
+        "Bold": null,
+        "Price": null,
+        "Balance": null,
+        "Current_price": null,
+        "Description": null,
+        "Manufacturer": null,
+        "Area_plant": 0.0,
+        "Area": 0.0,
+        "index": null,
+        "emp_emp_id": null,
+        "RepairStatus": null
+      },
+      {
+        "Name": "Ред Скарлет",
+        "Id": 11,
+        "Bold": null,
+        "Price": null,
+        "Balance": null,
+        "Current_price": null,
+        "Description": null,
+        "Manufacturer": null,
+        "Area_plant": 0.0,
+        "Area": 0.0,
+        "index": null,
+        "emp_emp_id": null,
+        "RepairStatus": null
+      },
+      {
+        "Name": "Ривьера",
+        "Id": 12,
+        "Bold": null,
+        "Price": null,
+        "Balance": null,
+        "Current_price": null,
+        "Description": null,
+        "Manufacturer": null,
+        "Area_plant": 0.0,
+        "Area": 0.0,
+        "index": null,
+        "emp_emp_id": null,
+        "RepairStatus": null
+      },
+      {
+        "Name": "Родрига",
+        "Id": 13,
+        "Bold": null,
+        "Price": null,
+        "Balance": null,
+        "Current_price": null,
+        "Description": null,
+        "Manufacturer": null,
+        "Area_plant": 0.0,
+        "Area": 0.0,
+        "index": null,
+        "emp_emp_id": null,
+        "RepairStatus": null
+      },
+      {
+        "Name": "Романа",
+        "Id": 14,
+        "Bold": null,
+        "Price": null,
+        "Balance": null,
+        "Current_price": null,
+        "Description": null,
+        "Manufacturer": null,
+        "Area_plant": 0.0,
+        "Area": 0.0,
+        "index": null,
+        "emp_emp_id": null,
+        "RepairStatus": null
+      },
+      {
+        "Name": "Эльмундо",
+        "Id": 15,
+        "Bold": null,
+        "Price": null,
+        "Balance": null,
+        "Current_price": null,
+        "Description": null,
+        "Manufacturer": null,
+        "Area_plant": 0.0,
+        "Area": 0.0,
+        "index": null,
+        "emp_emp_id": null,
+        "RepairStatus": null
+      },
+      {
+        "Name": "Касабланка",
+        "Id": 81,
+        "Bold": null,
+        "Price": null,
+        "Balance": null,
+        "Current_price": null,
+        "Description": null,
+        "Manufacturer": null,
+        "Area_plant": 0.0,
+        "Area": 0.0,
+        "index": null,
+        "emp_emp_id": null,
+        "RepairStatus": null
+      },
+      {
+        "Name": "Марис Бард",
+        "Id": 82,
+        "Bold": null,
+        "Price": null,
+        "Balance": null,
+        "Current_price": null,
+        "Description": null,
+        "Manufacturer": null,
+        "Area_plant": 0.0,
+        "Area": 0.0,
+        "index": null,
+        "emp_emp_id": null,
+        "RepairStatus": null
+      },
+      {
+        "Name": "Джели",
+        "Id": 83,
+        "Bold": null,
+        "Price": null,
+        "Balance": null,
+        "Current_price": null,
+        "Description": null,
+        "Manufacturer": null,
+        "Area_plant": 0.0,
+        "Area": 0.0,
+        "index": null,
+        "emp_emp_id": null,
+        "RepairStatus": null
+      },
+      {
+        "Name": "Джувел",
+        "Id": 84,
+        "Bold": null,
+        "Price": null,
+        "Balance": null,
+        "Current_price": null,
+        "Description": null,
+        "Manufacturer": null,
+        "Area_plant": 0.0,
+        "Area": 0.0,
+        "index": null,
+        "emp_emp_id": null,
+        "RepairStatus": null
+      },
+      {
+        "Name": "Романце",
+        "Id": 85,
+        "Bold": null,
+        "Price": null,
+        "Balance": null,
+        "Current_price": null,
+        "Description": null,
+        "Manufacturer": null,
+        "Area_plant": 0.0,
+        "Area": 0.0,
+        "index": null,
+        "emp_emp_id": null,
+        "RepairStatus": null
+      },
+      {
+        "Name": "Ранний семенной",
+        "Id": 110,
+        "Bold": null,
+        "Price": null,
+        "Balance": null,
+        "Current_price": null,
+        "Description": null,
+        "Manufacturer": null,
+        "Area_plant": 0.0,
+        "Area": 0.0,
+        "index": null,
+        "emp_emp_id": null,
+        "RepairStatus": null
+      },
+      {
+        "Name": "Ранний",
+        "Id": 111,
+        "Bold": null,
+        "Price": null,
+        "Balance": null,
+        "Current_price": null,
+        "Description": null,
+        "Manufacturer": null,
+        "Area_plant": 0.0,
+        "Area": 0.0,
+        "index": null,
+        "emp_emp_id": null,
+        "RepairStatus": null
+      },
+      {
+        "Name": "Ранний (011 Т)",
+        "Id": 115,
+        "Bold": null,
+        "Price": null,
+        "Balance": null,
+        "Current_price": null,
+        "Description": null,
+        "Manufacturer": null,
+        "Area_plant": 0.0,
+        "Area": 0.0,
+        "index": null,
+        "emp_emp_id": null,
+        "RepairStatus": null
+      },
+      {
+        "Name": "Семенной (011 Т)",
+        "Id": 116,
+        "Bold": null,
+        "Price": null,
+        "Balance": null,
+        "Current_price": null,
+        "Description": null,
+        "Manufacturer": null,
+        "Area_plant": 0.0,
+        "Area": 0.0,
+        "index": null,
+        "emp_emp_id": null,
+        "RepairStatus": null
+      }
+    ],
+    "Name": "Картофель",
+    "Id": 20,
+    "Bold": null,
+    "Price": null,
+    "Balance": null,
+    "Current_price": null,
+    "Description": null,
+    "Manufacturer": null,
+    "Area_plant": 0.0,
+    "Area": 0.0,
+    "index": null,
+    "emp_emp_id": null,
+    "RepairStatus": null
+  },
+  {
+    "Values": [],
+    "Name": "картофель семенной",
+    "Id": 44,
+    "Bold": null,
+    "Price": null,
+    "Balance": null,
+    "Current_price": null,
+    "Description": null,
+    "Manufacturer": null,
+    "Area_plant": 0.0,
+    "Area": 0.0,
+    "index": null,
+    "emp_emp_id": null,
+    "RepairStatus": null
+  },
+  {
+    "Values": [
+      {
+        "Name": "Нет сорта",
+        "Id": 69,
+        "Bold": null,
+        "Price": null,
+        "Balance": null,
+        "Current_price": null,
+        "Description": null,
+        "Manufacturer": null,
+        "Area_plant": 0.0,
+        "Area": 0.0,
+        "index": null,
+        "emp_emp_id": null,
+        "RepairStatus": null
+      }
+    ],
+    "Name": "Косточковые",
+    "Id": 24,
+    "Bold": null,
+    "Price": null,
+    "Balance": null,
+    "Current_price": null,
+    "Description": null,
+    "Manufacturer": null,
+    "Area_plant": 0.0,
+    "Area": 0.0,
+    "index": null,
+    "emp_emp_id": null,
+    "RepairStatus": null
+  },
+  {
+    "Values": [
+      {
+        "Name": "Бомбастик",
+        "Id": 63,
+        "Bold": null,
+        "Price": null,
+        "Balance": null,
+        "Current_price": null,
+        "Description": null,
+        "Manufacturer": null,
+        "Area_plant": 0.0,
+        "Area": 0.0,
+        "index": null,
+        "emp_emp_id": null,
+        "RepairStatus": null
+      },
+      {
+        "Name": "Евростар",
+        "Id": 64,
+        "Bold": null,
+        "Price": null,
+        "Balance": null,
+        "Current_price": null,
+        "Description": null,
+        "Manufacturer": null,
+        "Area_plant": 0.0,
+        "Area": 0.0,
+        "index": null,
+        "emp_emp_id": null,
+        "RepairStatus": null
+      },
+      {
+        "Name": "Сириус",
+        "Id": 65,
+        "Bold": null,
+        "Price": null,
+        "Balance": null,
+        "Current_price": null,
+        "Description": null,
+        "Manufacturer": null,
+        "Area_plant": 0.0,
+        "Area": 0.0,
+        "index": null,
+        "emp_emp_id": null,
+        "RepairStatus": null
+      },
+      {
+        "Name": "Сплендис",
+        "Id": 107,
+        "Bold": null,
+        "Price": null,
+        "Balance": null,
+        "Current_price": null,
+        "Description": null,
+        "Manufacturer": null,
+        "Area_plant": 0.0,
+        "Area": 0.0,
+        "index": null,
+        "emp_emp_id": null,
+        "RepairStatus": null
+      },
+      {
+        "Name": "Вулкан",
+        "Id": 108,
+        "Bold": null,
+        "Price": null,
+        "Balance": null,
+        "Current_price": null,
+        "Description": null,
+        "Manufacturer": null,
+        "Area_plant": 0.0,
+        "Area": 0.0,
+        "index": null,
+        "emp_emp_id": null,
+        "RepairStatus": null
+      }
+    ],
+    "Name": "Кукуруза",
+    "Id": 4,
+    "Bold": null,
+    "Price": null,
+    "Balance": null,
+    "Current_price": null,
+    "Description": null,
+    "Manufacturer": null,
+    "Area_plant": 0.0,
+    "Area": 0.0,
+    "index": null,
+    "emp_emp_id": null,
+    "RepairStatus": null
+  },
+  {
+    "Values": [
+      {
+        "Name": "Нет сорта",
+        "Id": 79,
+        "Bold": null,
+        "Price": null,
+        "Balance": null,
+        "Current_price": null,
+        "Description": null,
+        "Manufacturer": null,
+        "Area_plant": 0.0,
+        "Area": 0.0,
+        "index": null,
+        "emp_emp_id": null,
+        "RepairStatus": null
+      }
+    ],
+    "Name": "Кукуруза на силос",
+    "Id": 37,
+    "Bold": null,
+    "Price": null,
+    "Balance": null,
+    "Current_price": null,
+    "Description": null,
+    "Manufacturer": null,
+    "Area_plant": 0.0,
+    "Area": 0.0,
+    "index": null,
+    "emp_emp_id": null,
+    "RepairStatus": null
+  },
+  {
+    "Values": [],
+    "Name": "Луговое сено",
+    "Id": 30,
+    "Bold": null,
+    "Price": null,
+    "Balance": null,
+    "Current_price": null,
+    "Description": null,
+    "Manufacturer": null,
+    "Area_plant": 0.0,
+    "Area": 0.0,
+    "index": null,
+    "emp_emp_id": null,
+    "RepairStatus": null
+  },
+  {
+    "Name": "Лук",
+    "Id": 5,
+    "Values": [
+      {
+        "Name": "Универсо",
+        "Id": 86
+      },
+      {
+        "Name": "Пандеро",
+        "Id": 87
+      },
+      {
+        "Name": "EX07714593",
+        "Id": 16
+      },
+      {
+        "Name": "Ворес",
+        "Id": 17
+      },
+      {
+        "Name": "Маргит",
+        "Id": 18
+      },
+      {
+        "Name": "Миссисипи",
+        "Id": 19
+      },
+      {
+        "Name": "Седона",
+        "Id": 20
+      },
+      {
+        "Name": "Стерлинг",
+        "Id": 21
+      },
+      {
+        "Name": "Тамара",
+        "Id": 22
+      },
+      {
+        "Name": "Тореско",
+        "Id": 23
+      },
+      {
+        "Name": "Франциско",
+        "Id": 24
+      }
+    ]
+  },
+  {
+    "Name": "Малина",
+    "Id": 15,
+    "Values": [
+      {
+        "Name": "Нет сорта",
+        "Id": 68
+      }
+    ]
+  },
+  {
+    "Name": "МКРС",
+    "Id": 28,
+    "Values": [
+      {
+        "Name": "МКРС",
+        "Id": 78
+      }
+    ]
+  },
+  {
+    "Name": "Многолетние травы",
+    "Id": 21,
+    "Values": [
+      {
+        "Name": "Кострец безостый",
+        "Id": 112
+      },
+      {
+        "Name": "Нет сорта",
+        "Id": 66
+      }
+    ]
+  },
+  {
+    "Name": "Морковь",
+    "Id": 13,
+    "Values": [
+      {
+        "Name": "Абако",
+        "Id": 27
+      },
+      {
+        "Name": "Каскад",
+        "Id": 28
+      }
+    ]
+  },
+  {
+    "Name": "огурец",
+    "Id": 47,
+    "Values": [
+      {
+        "Name": "Герман",
+        "Id": 118
+      }
+    ]
+  },
+  {
+    "Name": "Однолетние травы",
+    "Id": 43,
+    "Values": [
+      {
+        "Name": "Однолетние травы",
+        "Id": 114
+      }
+    ]
+  },
+  {
+    "Name": "Озимая пшеница",
+    "Id": 6,
+    "Values": [
+      {
+        "Name": "Губернатор Дона",
+        "Id": 30
+      },
+      {
+        "Name": "Донэко",
+        "Id": 31
+      },
+      {
+        "Name": "Крастал",
+        "Id": 32
+      },
+      {
+        "Name": "Одесская 267",
+        "Id": 33
+      },
+      {
+        "Name": "Скипетр",
+        "Id": 34
+      },
+      {
+        "Name": "Ядвися",
+        "Id": 35
+      }
+    ]
+  },
+  {
+    "Name": "Пар",
+    "Id": 7,
+    "Values": [
+      {
+        "Name": "Пар",
+        "Id": 71
+      }
+    ]
+  },
+  {
+    "Name": "Подсолнечник",
+    "Id": 3,
+    "Values": [
+      {
+        "Name": "90-93 (Штрубе)",
+        "Id": 54
+      },
+      {
+        "Name": "Белла (Евралис)",
+        "Id": 55
+      },
+      {
+        "Name": "Брио(Сенгента)",
+        "Id": 56
+      },
+      {
+        "Name": "Бэлла",
+        "Id": 57
+      },
+      {
+        "Name": "Конди (Сенгента)",
+        "Id": 58
+      },
+      {
+        "Name": "Петунья",
+        "Id": 59
+      },
+      {
+        "Name": "Cмесь сортов",
+        "Id": 60
+      },
+      {
+        "Name": "Шерпа (Евралис)",
+        "Id": 61
+      },
+      {
+        "Name": "Элвис (Штрубе)",
+        "Id": 62
+      },
+      {
+        "Name": "ЛГ-5377",
+        "Id": 100
+      },
+      {
+        "Name": "ЛГ-5380",
+        "Id": 101
+      },
+      {
+        "Name": "Фломенко",
+        "Id": 95
+      },
+      {
+        "Name": "Ниагара",
+        "Id": 96
+      }
+    ]
+  },
+  {
+    "Name": "Показательный участок",
+    "Id": 45,
+    "Values": []
+  },
+  {
+    "Name": "Сахарная свекла",
+    "Id": 14,
+    "Values": [
+      {
+        "Name": "Льговская",
+        "Id": 104
+      },
+      {
+        "Name": "Каскад",
+        "Id": 105
+      },
+      {
+        "Name": "Кармон",
+        "Id": 106
+      },
+      {
+        "Name": "Армин",
+        "Id": 46
+      },
+      {
+        "Name": "Бакара",
+        "Id": 47
+      },
+      {
+        "Name": "Веда",
+        "Id": 48
+      },
+      {
+        "Name": "РМС 60",
+        "Id": 49
+      },
+      {
+        "Name": "РМС 120",
+        "Id": 50
+
+      },
+      {
+        "Name": "РО 117",
+        "Id": 51
+      },
+      {
+        "Name": "Симбол",
+        "Id": 52
+      },
+      {
+        "Name": "Хамбер",
+        "Id": 53
+      }
+    ]
+  },
+  {
+    "Name": "Сахарная свекла полив",
+    "Id": 42,
+    "Values": [
+      {
+        "Name": "Бакара",
+        "Id": 113
+      }
+    ]
+  },
+  {
+    "Name": "Семена сах.свеклы на штеклинги",
+    "Id": 48,
+    "Values": []
+  },
+  {
+    "Name": "Сенаж",
+    "Id": 27,
+    "Values": [
+      {
+        "Name": "Сенаж",
+        "Id": 77
+      }
+    ]
+  },
+  {
+    "Name": "Слива",
+    "Values": []
+  },
+  {
+    "Name": "Солома пшеничная",
+    "Id": 35,
+    "Values": []
+  },
+  {
+    "Name": "Солома ячменная",
+    "Id": 34,
+    "Values": []
+  },
+  {
+    "Name": "Соя",
+    "Id": 16,
+    "Values": [
+      {
+        "Name": "Белгородская 7",
+        "Id": 97
+      },
+      {
+        "Name": "Свапа",
+        "Id": 98
+      },
+      {
+        "Name": "Арэста",
+        "Id": 45
+      }
+    ]
+  },
+  {
+    "Name": "Соя (на давальческих условиях)",
+    "Id": 46,
+    "Values": [
+      {
+        "Name": "Нет сорта",
+        "Id": 117
+      }
+    ]
+  },
+  {
+    "Name": "Ст. свекла",
+    "Id": 22,
+    "Values": [
+      {
+        "Name": "Ст. свекла",
+        "Id": 73
+      },
+      {
+        "Name": "Пабло",
+        "Id": 90
+      },
+      {
+        "Name": "Боро",
+        "Id": 91
+      }
+    ]
+  },
+  {
+    "Name": "Тыква",
+    "Id": 49,
+    "Values": []
+  },
+  {
+    "Name": "Цикорий",
+    "Id": 18,
+    "Values": [
+      {
+        "Name": "Александрит",
+        "Id": 92
+      },
+      {
+        "Name": "Нет сорта",
+        "Id": 29
+      }
+    ]
+  },
+  {
+    "Name": "Штеклинги",
+    "Id": 10,
+    "Values": [
+      {
+        "Name": "Штеклинги",
+        "Id": 72
+      }
+    ]
+  },
+  {
+    "Name": "Яблоневый сад",
+    "Id": 17,
+    "Values": [
+      {
+        "Name": "Нет сорта",
+        "Id": 67
+      },
+      {
+        "Name": "Яблочный сад (закладка)",
+        "Id": 94
+      }
+    ]
+  },
+  {
+    "Name": "Яровая пшеница",
+    "Id": 2,
+    "Values": [
+      {
+        "Name": "Дарья",
+        "Id": 36
+      }
+    ]
+  },
+  {
+    "Name": "Ячмень",
+    "Id": 1,
+    "Values": [
+      {
+        "Name": "Анабель",
+        "Id": 37
+      },
+      {
+        "Name": "Грейс",
+        "Id": 38
+      },
+      {
+        "Name": "Калькюль",
+        "Id": 39
+      },
+      {
+        "Name": "Маргарет",
+        "Id": 40
+      },
+      {
+        "Name": "Эспарцет",
+        "Id": 41
+      },
+      {
+        "Name": "Авторитет",
+        "Id": 109
+      }
+    ]
+  }
+];
+
+
+export const REPRODUCTION_LIST = [
+  {name: 'Репродукция семян 1'},
+  {name: 'Репродукция семян 2'},
+  {name: 'Репродукция семян 3'},
+  {name: 'Гибрид'},
+  {name: 'Элита'},
+  {name: 'Нет'},
+  {name: 'СЭ'}
+];
+export const CULTURE_TABLE_FIELDS = [
+  { key: 'name', label: 'Культура' }
+];
+
+export const SORTS_TABLE_FIELDS = [
+  {key: 'name', label: 'Сорт'},
+  {key: 'reproduction', label: 'Репродукция'},
+  {key: 'square', label: 'Площадь'},
+];
+

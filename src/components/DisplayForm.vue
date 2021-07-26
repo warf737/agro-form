@@ -23,7 +23,7 @@ export default {
     };
   },
   directives: {
-    ClickOutside
+    ClickOutside,
   },
   computed: {
     fields() {
@@ -134,11 +134,9 @@ export default {
         factTotal += square.fact;
         planTotal += square.plan;
       });
-
       return { fact : factTotal, plan: planTotal };
     },
     handleSelect(cell) {
-      console.log(cell);
       const year = this.fields.find(field => field.key === cell.label).label
       this.$emit('select-cell', {...cell, year: year });
     },
@@ -238,8 +236,8 @@ export default {
               <div class="table-cell--data-wrapper" :key="idx">
                 <p class="table-cell--title"> {{ i.name }}</p>
                 <p>
-                  <span class="data-plan">{{ `${getTotalSquares(i.grades).plan}` }}</span>
-                  <span class="data-fact"> {{ ` / ${getTotalSquares(i.grades).fact}` }}</span>
+                  <span class="data-plan">{{ `${ getTotalSquares(i.grades).plan }` }}</span>
+                  <span class="data-fact"> {{ ` / ${ getTotalSquares(i.grades).fact }` }}</span>
                 </p>
               </div>
             </template>
@@ -252,8 +250,8 @@ export default {
               <div class="table-cell--data-wrapper" :key="idx">
                 <p class="table-cell--title"> {{ i.name }}</p>
                 <p>
-                  <span class="data-plan">{{ `${getTotalSquares(i.grades).plan}` }}</span>
-                  <span class="data-fact"> {{ ` / ${getTotalSquares(i.grades).fact}` }}</span>
+                  <span class="data-plan">{{ `${ getTotalSquares(i.grades).plan }` }}</span>
+                  <span class="data-fact"> {{ ` / ${ getTotalSquares(i.grades).fact }` }}</span>
                 </p>
               </div>
             </template>
@@ -360,7 +358,6 @@ export default {
     :nth-child(4) >.el-select {
       width: 150px;
     }
-
   }
 
   &-controls--control {
@@ -377,6 +374,7 @@ export default {
     line-height: 1.42857143;
   }
 }
+
 .control--edit-button span {
   color: white;
 }
@@ -421,6 +419,12 @@ tbody {
   color: inherit !important;
 }
 
+.df-table > .table > :not(caption) > * > * {
+  padding-top: initial !important;
+  padding-bottom: initial !important;
+  padding-right: initial !important;
+}
+
 .table > thead > tr > th:not(:first-child) div {
   font-family: DINPro-Medium, sans-serif !important;
   padding: 5px;
@@ -431,6 +435,7 @@ tbody {
   color: grey;
   font-size: 17px;
   font-weight: normal;
+  text-align: center;
 }
 
 .el-pagination {
